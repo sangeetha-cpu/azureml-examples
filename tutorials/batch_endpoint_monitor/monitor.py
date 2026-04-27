@@ -15,9 +15,7 @@ ml_client = MLClient(
     workspace,
 )
 
-mlflow.set_tracking_uri(
-    ml_client.workspaces.get(workspace).mlflow_tracking_uri
-)
+mlflow.set_tracking_uri(ml_client.workspaces.get(workspace).mlflow_tracking_uri)
 
 runs = mlflow.search_runs(
     experiment_names=[endpoint_name],
